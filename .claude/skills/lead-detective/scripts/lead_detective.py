@@ -9,10 +9,11 @@ def main():
     parser.add_argument("--location", required=True, help="Address or location of the company.")
     parser.add_argument("--trigger", required=True, help="The event that triggered the lead (e.g., 'New Lease').")
     parser.add_argument("--source", help="Source of the information (e.g., 'Manassas Journal').")
+    parser.add_argument("--data-dir", default=os.getenv("LEAD_DATA_DIR", ".tmp"), help="Directory to store lead data (default: .tmp or LEAD_DATA_DIR env).")
     
     args = parser.parse_args()
 
-    data_dir = os.path.join(os.getcwd(), ".tmp")
+    data_dir = os.path.abspath(args.data_dir)
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
 

@@ -10,10 +10,14 @@ def main():
     parser.add_argument("--title", help="Title of the contact (e.g., 'Facility Manager').")
     parser.add_argument("--email", help="Email address.")
     parser.add_argument("--phone", help="Phone number.")
+    parser.add_argument("--data-dir", default=os.getenv("LEAD_DATA_DIR", ".tmp"), help="Directory to store lead data (default: .tmp or LEAD_DATA_DIR env).")
     
     args = parser.parse_args()
 
-    data_dir = os.path.join(os.getcwd(), ".tmp")
+    data_dir = os.path.abspath(args.data_dir)
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+
     output_file = os.path.join(data_dir, "manassas_leads_enriched.csv")
     file_exists = os.path.isfile(output_file)
 
