@@ -5,17 +5,17 @@
 2. **[Maps Scout SOP](workflows/maps_scout_sop.md)**: Finding high-value local buildings and medical offices.
 3. **[Qualification SOP](workflows/lead_qualification_sop.md)**: Deep research into facility type and profitability.
 
-## 🤖 Agents
-- **Lead Detective (Trigger)**: Finds companies moving, expanding, or signing new leases.
-- **Maps Scout**: Scans Google Maps for medical/professional buildings.
-- **Lead Enricher**: Finds specific decision-maker names and contact info for all leads.
-- **Lead Profiler**: Conducts deep research to qualify leads for profitability.
+## 🤖 Agents (Skills)
+- **[Lead Detective](.claude/skills/lead-detective/SKILL.md)**: Finds companies moving, expanding, or signing new leases.
+- **[Maps Scout](.claude/skills/maps-scout/SKILL.md)**: Scans Google Maps for medical/professional buildings.
+- **[Lead Enricher](.claude/skills/lead-enricher/SKILL.md)**: Finds specific decision-maker names and contact info for all leads.
+- **[Lead Profiler](.claude/skills/lead-profiler/SKILL.md)**: Conducts deep research to qualify leads for profitability.
 
-## 🛠️ Tools
-- `tools/lead_detective.py`: The Trigger-based search script.
-- `tools/maps_scout.py`: The Google Maps scanning script.
-- `tools/enrich_leads.py`: The unified enrichment script for all sources.
-- `tools/lead_profiler.py`: The qualification script.
+## 🛠️ Tools (Scripts)
+- `.claude/skills/lead-detective/scripts/lead_detective.py`: The Trigger-based search script.
+- `.claude/skills/maps-scout/scripts/maps_scout.py`: The Google Maps scanning script.
+- `.claude/skills/lead-enricher/scripts/enrich_leads.py`: The unified enrichment script for all sources.
+- `.claude/skills/lead-profiler/scripts/lead_profiler.py`: The qualification script.
 
 ## 📁 Data
 - `.tmp/trigger_leads.csv`: Raw news/lease trigger data.
